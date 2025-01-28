@@ -1,0 +1,125 @@
+body {
+  /*font-family: Arial, sans-serif;
+ページ全体で使用するフォントを指定します。
+優先順位順にフォントを指定しており、以下の順番で適用されます:
+Arial: 優先的に使用するフォント。
+sans-serif: Arialが利用できない場合に使われる代替フォント（ゴシック体）。*/
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.header-image {
+  margin: 20px auto;
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.introduction {
+  text-align: center;
+  padding: 20px;
+}
+
+.products {
+  /*gridの解説 https://www.sejuku.net/blog/55869*/
+  display: grid;
+  /*grid-template-columns → 列（columns）の幅を定義*/
+  /*fr → fraction（分割単位） の略で、残りのスペースを割合で分割する単位*/
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-item {
+  /* display: flex; → デフォルトでは、子要素は 横方向（水平方向） に配置 */
+  display: flex;
+  align-items: center;
+  /*gap → Flexbox や Grid で使用できるプロパティで、アイテム間の隙間を指定*/
+  gap: 20px;
+}
+/*親要素（product-item）の子要素の「奇数番目」の要素を選択する*/
+.product-item:nth-child(odd) {
+  /*フレックスボックス（Flexbox）におけるアイテムの並び方向を「水平方向（左から右）」に設定*/
+  flex-direction: row;
+}
+/*親要素（product-item）の子要素の「偶数番目」の要素を選択する*/
+.product-item:nth-child(even) {
+  /*フレックスボックスの並び方向を「水平方向（右から左）」に設定*/
+  flex-direction: row-reverse;
+}
+
+.product-image {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-link {
+  /*inline-block → 要素をインライン要素のように配置しつつ、ブロック要素のように幅や高さを設定可能*/
+  display: inline-block;
+  /*上下,左右*/
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  /*text-decoration: none; → テキストリンクにデフォルトでついている下線を削除*/
+  text-decoration: none;
+  /*border-radius: 5px → 要素の角を5pxの半径で丸くする*/
+  border-radius: 5px;
+}
+/*hover → ユーザーが要素にマウスカーソルを乗せたときに適用*/
+.contact-link:hover {
+  background-color: #ff6347;
+}
+
+/*contact.html*/
+.contact-page {
+  /* 親要素に相対位置を指定 https://uxmilk.jp/63409*/
+  position: relative;
+  text-align: center;
+  padding: 20px;
+}
+
+#email-label {
+  /* 絶対位置を使用 https://techmania.jp/blog/css-position-absolute/*/
+  position: absolute;
+  top: 150px;
+  left: 875px;
+}
+
+#email {
+  position: absolute;
+  top: 200px;
+  left: 400px;
+  width: 50%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+#message-label {
+  position: absolute;
+  top: 275px;
+  left: 900px;
+}
+
+#message {
+  position: absolute;
+  top: 320px;
+  left: 400px;
+  width: 50%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+#button {
+  position: absolute;
+  top: 500px;
+  left: 900px;
+}
